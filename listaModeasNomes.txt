@@ -1,0 +1,174 @@
+|  Nº | Sigla | Nome em português                         | Nome em inglês                              |
+| --: | ----- | ----------------------------------------- | ------------------------------------------- |
+|   1 | AED   | Dirham dos Emirados Árabes Unidos         | United Arab Emirates Dirham                 |
+|   2 | AFN   | Afegane afegão                            | Afghan Afghani                              |
+|   3 | ALL   | Lek albanês                               | Albanian Lek                                |
+|   4 | AMD   | Dram armênio                              | Armenian Dram                               |
+|   5 | ANG   | Florim das Antilhas Neerlandesas          | Netherlands Antillean Guilder               |
+|   6 | AOA   | Kwanza angolano                           | Angolan Kwanza                              |
+|   7 | ARS   | Peso argentino                            | Argentine Peso                              |
+|   8 | AUD   | Dólar australiano                         | Australian Dollar                           |
+|   9 | AWG   | Florim arubano                            | Aruban Florin                               |
+|  10 | AZN   | Manat azerbaijano                         | Azerbaijani Manat                           |
+|  11 | BAM   | Marco conversível da Bósnia e Herzegovina | Bosnia and Herzegovina Convertible Mark     |
+|  12 | BBD   | Dólar de Barbados                         | Barbados Dollar                             |
+|  13 | BDT   | Taka de Bangladesh                        | Bangladeshi Taka                            |
+|  14 | BGN   | Lev búlgaro                               | Bulgarian Lev                               |
+|  15 | BHD   | Dinar bareinita                           | Bahraini Dinar                              |
+|  16 | BIF   | Franco burundiano                         | Burundian Franc                             |
+|  17 | BMD   | Dólar bermudense                          | Bermudian Dollar                            |
+|  18 | BND   | Dólar de Brunei                           | Brunei Dollar                               |
+|  19 | BOB   | Boliviano                                 | Bolivian Boliviano                          |
+|  20 | BRL   | Real brasileiro                           | Brazilian Real                              |
+|  21 | BSD   | Dólar bahamense                           | Bahamian Dollar                             |
+|  22 | BTC   | Bitcoin                                   | Bitcoin                                     |
+|  23 | BTN   | Ngultrum butanês                          | Bhutanese Ngultrum                          |
+|  24 | BWP   | Pula de Botsuana                          | Botswana Pula                               |
+|  25 | BYN   | Rublo bielorrusso                         | Belarusian Ruble                            |
+|  26 | BZD   | Dólar belizenho                           | Belize Dollar                               |
+|  27 | CAD   | Dólar canadense                           | Canadian Dollar                             |
+|  28 | CDF   | Franco congolês                           | Congolese Franc                             |
+|  29 | CHF   | Franco suíço                              | Swiss Franc                                 |
+|  30 | CLF   | Unidade de Fomento chilena                | Chilean Unit of Account / Unidad de Fomento |
+|  31 | CLP   | Peso chileno                              | Chilean Peso                                |
+|  32 | CNH   | Yuan chinês offshore                      | Offshore Chinese Yuan                       |
+|  33 | CNY   | Yuan chinês                               | Chinese Yuan                                |
+|  34 | COP   | Peso colombiano                           | Colombian Peso                              |
+|  35 | CRC   | Colón costarriquenho                      | Costa Rican Colón                           |
+|  36 | CUC   | Peso cubano conversível                   | Cuban Convertible Peso                      |
+|  37 | CUP   | Peso cubano                               | Cuban Peso                                  |
+|  38 | CVE   | Escudo cabo-verdiano                      | Cape Verdean Escudo                         |
+|  39 | CZK   | Coroa tcheca                              | Czech Koruna                                |
+|  40 | DJF   | Franco djibutiano                         | Djiboutian Franc                            |
+|  41 | DKK   | Coroa dinamarquesa                        | Danish Krone                                |
+|  42 | DOP   | Peso dominicano                           | Dominican Peso                              |
+|  43 | DZD   | Dinar argelino                            | Algerian Dinar                              |
+|  44 | EGP   | Libra egípcia                             | Egyptian Pound                              |
+|  45 | ERN   | Nakfa eritreu                             | Eritrean Nakfa                              |
+|  46 | ETB   | Birr etíope                               | Ethiopian Birr                              |
+|  47 | EUR   | Euro                                      | Euro                                        |
+|  48 | FJD   | Dólar fijiano                             | Fijian Dollar                               |
+|  49 | FKP   | Libra das Ilhas Malvinas                  | Falkland Islands Pound                      |
+|  50 | GBP   | Libra esterlina                           | Pound Sterling                              |
+|  51 | GEL   | Lari georgiano                            | Georgian Lari                               |
+|  52 | GGP   | Libra de Guernsey                         | Guernsey Pound                              |
+|  53 | GHS   | Cedi ganês                                | Ghanaian Cedi                               |
+|  54 | GIP   | Libra de Gibraltar                        | Gibraltar Pound                             |
+|  55 | GMD   | Dalasi gambiano                           | Gambian Dalasi                              |
+|  56 | GNF   | Franco guineense                          | Guinean Franc                               |
+|  57 | GTQ   | Quetzal guatemalteco                      | Guatemalan Quetzal                          |
+|  58 | GYD   | Dólar guianense                           | Guyanese Dollar                             |
+|  59 | HKD   | Dólar de Hong Kong                        | Hong Kong Dollar                            |
+|  60 | HNL   | Lempira hondurenha                        | Honduran Lempira                            |
+|  61 | HRK   | Kuna croata                               | Croatian Kuna                               |
+|  62 | HTG   | Gourde haitiano                           | Haitian Gourde                              |
+|  63 | HUF   | Forint húngaro                            | Hungarian Forint                            |
+|  64 | IDR   | Rupia indonésia                           | Indonesian Rupiah                           |
+|  65 | ILS   | Novo shekel israelense                    | Israeli New Shekel                          |
+|  66 | IMP   | Libra da Ilha de Man                      | Isle of Man Pound                           |
+|  67 | INR   | Rúpia indiana                             | Indian Rupee                                |
+|  68 | IQD   | Dinar iraquiano                           | Iraqi Dinar                                 |
+|  69 | IRR   | Rial iraniano                             | Iranian Rial                                |
+|  70 | ISK   | Coroa islandesa                           | Icelandic Króna                             |
+|  71 | JEP   | Libra de Jersey                           | Jersey Pound                                |
+|  72 | JMD   | Dólar jamaicano                           | Jamaican Dollar                             |
+|  73 | JOD   | Dinar jordaniano                          | Jordanian Dinar                             |
+|  74 | JPY   | Iene japonês                              | Japanese Yen                                |
+|  75 | KES   | Xelim queniano                            | Kenyan Shilling                             |
+|  76 | KGS   | Som quirguiz                              | Kyrgyzstani Som                             |
+|  77 | KHR   | Riel cambojano                            | Cambodian Riel                              |
+|  78 | KMF   | Franco comorense                          | Comorian Franc                              |
+|  79 | KPW   | Won norte-coreano                         | North Korean Won                            |
+|  80 | KRW   | Won sul-coreano                           | South Korean Won                            |
+|  81 | KWD   | Dinar kuwaitiano                          | Kuwaiti Dinar                               |
+|  82 | KYD   | Dólar das Ilhas Cayman                    | Cayman Islands Dollar                       |
+|  83 | KZT   | Tenge cazaque                             | Kazakhstani Tenge                           |
+|  84 | LAK   | Kip laosiano                              | Lao Kip                                     |
+|  85 | LBP   | Libra libanesa                            | Lebanese Pound                              |
+|  86 | LKR   | Rúpia do Sri Lanka                        | Sri Lankan Rupee                            |
+|  87 | LRD   | Dólar liberiano                           | Liberian Dollar                             |
+|  88 | LSL   | Loti do Lesoto                            | Lesotho Loti                                |
+|  89 | LYD   | Dinar líbio                               | Libyan Dinar                                |
+|  90 | MAD   | Dirham marroquino                         | Moroccan Dirham                             |
+|  91 | MDL   | Leu moldavo                               | Moldovan Leu                                |
+|  92 | MGA   | Ariary malgaxe                            | Malagasy Ariary                             |
+|  93 | MKD   | Dinar macedônio                           | Macedonian Denar                            |
+|  94 | MMK   | Kyat de Mianmar                           | Myanmar Kyat                                |
+|  95 | MNT   | Tugrik mongol                             | Mongolian Tögrög                            |
+|  96 | MOP   | Pataca macaense                           | Macanese Pataca                             |
+|  97 | MRU   | Ouguiya mauritana                         | Mauritanian Ouguiya                         |
+|  98 | MUR   | Rúpia mauriciana                          | Mauritian Rupee                             |
+|  99 | MVR   | Rufiyaa maldiva                           | Maldivian Rufiyaa                           |
+| 100 | MWK   | Kwacha malawiana                          | Malawian Kwacha                             |
+| 101 | MXN   | Peso mexicano                             | Mexican Peso                                |
+| 102 | MYR   | Ringgit malaio                            | Malaysian Ringgit                           |
+| 103 | MZN   | Metical moçambicano                       | Mozambican Metical                          |
+| 104 | NAD   | Dólar namibiano                           | Namibian Dollar                             |
+| 105 | NGN   | Naira nigeriana                           | Nigerian Naira                              |
+| 106 | NIO   | Córdoba nicaraguense                      | Nicaraguan Córdoba                          |
+| 107 | NOK   | Coroa norueguesa                          | Norwegian Krone                             |
+| 108 | NPR   | Rúpia nepalesa                            | Nepalese Rupee                              |
+| 109 | NZD   | Dólar neozelandês                         | New Zealand Dollar                          |
+| 110 | OMR   | Rial omanense                             | Omani Rial                                  |
+| 111 | PAB   | Balboa panamenho                          | Panamanian Balboa                           |
+| 112 | PEN   | Sol peruano                               | Peruvian Sol                                |
+| 113 | PGK   | Kina de Papua-Nova Guiné                  | Papua New Guinean Kina                      |
+| 114 | PHP   | Peso filipino                             | Philippine Peso                             |
+| 115 | PKR   | Rúpia paquistanesa                        | Pakistani Rupee                             |
+| 116 | PLN   | Złoty polonês                             | Polish Złoty                                |
+| 117 | PYG   | Guarani paraguaio                         | Paraguayan Guaraní                          |
+| 118 | QAR   | Rial catariano                            | Qatari Riyal                                |
+| 119 | RON   | Leu romeno                                | Romanian Leu                                |
+| 120 | RSD   | Dinar sérvio                              | Serbian Dinar                               |
+| 121 | RUB   | Rublo russo                               | Russian Ruble                               |
+| 122 | RWF   | Franco ruandês                            | Rwandan Franc                               |
+| 123 | SAR   | Rial saudita                              | Saudi Riyal                                 |
+| 124 | SBD   | Dólar das Ilhas Salomão                   | Solomon Islands Dollar                      |
+| 125 | SCR   | Rúpia seichelense                         | Seychellois Rupee                           |
+| 126 | SDG   | Libra sudanesa                            | Sudanese Pound                              |
+| 127 | SEK   | Coroa sueca                               | Swedish Krona                               |
+| 128 | SGD   | Dólar de Singapura                        | Singapore Dollar                            |
+| 129 | SHP   | Libra de Santa Helena                     | Saint Helena Pound                          |
+| 130 | SLE   | Leone de Serra Leoa                       | Sierra Leonean Leone                        |
+| 131 | SLL   | Leone antigo de Serra Leoa                | Old Sierra Leonean Leone                    |
+| 132 | SOS   | Xelim somali                              | Somali Shilling                             |
+| 133 | SRD   | Dólar surinamês                           | Surinamese Dollar                           |
+| 134 | SSP   | Libra sul-sudanesa                        | South Sudanese Pound                        |
+| 135 | STD   | Dobra antigo de São Tomé e Príncipe       | Old São Tomé and Príncipe Dobra             |
+| 136 | STN   | Dobra de São Tomé e Príncipe              | São Tomé and Príncipe Dobra                 |
+| 137 | SVC   | Colón salvadorenho                        | Salvadoran Colón                            |
+| 138 | SYP   | Libra síria                               | Syrian Pound                                |
+| 139 | SZL   | Lilangeni de Essuatíni                    | Swazi Lilangeni                             |
+| 140 | THB   | Baht tailandês                            | Thai Baht                                   |
+| 141 | TJS   | Somoni tadjique                           | Tajikistani Somoni                          |
+| 142 | TMT   | Manat turcomeno                           | Turkmenistani Manat                         |
+| 143 | TND   | Dinar tunisiano                           | Tunisian Dinar                              |
+| 144 | TOP   | Paʻanga tonganesa                         | Tongan Paʻanga                              |
+| 145 | TRY   | Lira turca                                | Turkish Lira                                |
+| 146 | TTD   | Dólar de Trinidad e Tobago                | Trinidad and Tobago Dollar                  |
+| 147 | TWD   | Novo dólar taiwanês                       | New Taiwan Dollar                           |
+| 148 | TZS   | Xelim tanzaniano                          | Tanzanian Shilling                          |
+| 149 | UAH   | Hryvnia ucraniana                         | Ukrainian Hryvnia                           |
+| 150 | UGX   | Xelim ugandense                           | Ugandan Shilling                            |
+| 151 | USD   | Dólar americano                           | United States Dollar                        |
+| 152 | UYU   | Peso uruguaio                             | Uruguayan Peso                              |
+| 153 | UZS   | Som uzbeque                               | Uzbekistani Som                             |
+| 154 | VES   | Bolívar venezuelano                       | Venezuelan Bolívar                          |
+| 155 | VND   | Dong vietnamita                           | Vietnamese Đồng                             |
+| 156 | VUV   | Vatu vanuatuense                          | Vanuatu Vatu                                |
+| 157 | WST   | Tala samoano                              | Samoan Tala                                 |
+| 158 | XAF   | Franco CFA da África Central              | Central African CFA Franc                   |
+| 159 | XAG   | Prata, onça troy                          | Silver, one troy ounce                      |
+| 160 | XAU   | Ouro, onça troy                           | Gold, one troy ounce                        |
+| 161 | XCD   | Dólar do Caribe Oriental                  | East Caribbean Dollar                       |
+| 162 | XCG   | Florim caribenho                          | Caribbean Guilder                           |
+| 163 | XDR   | Direitos Especiais de Saque               | Special Drawing Rights                      |
+| 164 | XOF   | Franco CFA da África Ocidental            | West African CFA Franc                      |
+| 165 | XPD   | Paládio, onça troy                        | Palladium, one troy ounce                   |
+| 166 | XPF   | Franco CFP                                | CFP Franc                                   |
+| 167 | XPT   | Platina, onça troy                        | Platinum, one troy ounce                    |
+| 168 | YER   | Rial iemenita                             | Yemeni Rial                                 |
+| 169 | ZAR   | Rand sul-africano                         | South African Rand                          |
+| 170 | ZMW   | Kwacha zambiana                           | Zambian Kwacha                              |
+| 171 | ZWG   | Zimbabwe Gold / ZiG                       | Zimbabwe Gold / ZiG                         |
+| 172 | ZWL   | Dólar zimbabuano                          | Zimbabwean Dollar                           |
