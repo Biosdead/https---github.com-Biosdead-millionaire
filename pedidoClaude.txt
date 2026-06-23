@@ -1,0 +1,6 @@
+Gostaria que você fizesse todo o front-end deste sistema. O front-end deve ser projetado para dispositivos móveis principalmente e ter a mesma estética do jogo monopoly, incluindo fonte e cores. Além disso, prepare o site para ser bem ranqueado nos buscadores ao fazer SEO de todo o sistema. Você é livre para inovar e implementar melhorias no projeto base. Faça o sistema ser bilingue tendo uma versão em portugues e outra inglês. 
+
+Além disso, sugira nomes. No momento está eu sou milionário, principalmente, nomes em inglês para site com o objetivo de ser rankeado melhor nas buscas do google. Ou seja, nomes voltados para SEO.
+
+
+O principal objetivo deste projeto é incentivar o criação de uma reserva financeira e estimular através de uma gamificação, mostrando onde o usuário é milionário e quanto falta para ser milionário em uma próxima moeda. E assim o incentivando a acumular mais dinheiro em sua reserva financeira.

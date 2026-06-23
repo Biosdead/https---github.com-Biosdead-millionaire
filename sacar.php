@@ -1,136 +1,126 @@
 <?php
+session_start();
+if (isset($_GET['lang']) && in_array($_GET['lang'], ['pt','en'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+$lang = $_SESSION['lang'] ?? 'pt';
+include_once "./autenticador.php";
 include_once "./conexao.php";
 include_once "moedas.php";
-session_start();
+include "lang.php";
 
-include_once "./autenticador.php";
+$montante   = (float) $_SESSION['montante'];
+$moedaAtual = $_SESSION['moeda'];
+$success    = '';
 
-$montante = $_SESSION["montante"];
-$moedaAtual = $_SESSION["moeda"];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['valor'], $_POST['moedaAtual'])) {
+    $novoValor  = (float)  $_POST['valor'];
+    $novaMoeda  = (string) $_POST['moedaAtual'];
+    $id         = (int)    $_SESSION['id'];
 
-
-
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form id="sacar" action="./sacar.php" method="post">
-        <label for="moedaAtual">Escolha sua moeda:</label>
-        <select name="moedaAtual">
-            <?php
-            foreach ($moedas as $moeda) {
-                if ($moeda['sigla'] == $moedaAtual) {
-                    echo "<option value={$moeda['sigla']} selected>{$moeda['nome_pt']}</option>";
-                } else {
-                    echo "<option value={$moeda['sigla']}>{$moeda['nome_pt']}</option>";
-                }
-            }
-            ?>
-        </select>
-        <label for="valor">Atualize seu montante:</label>
-        <input type="number" placeholder="Insira o novo Valor" name="valor" value=<?php echo $montante ?> step="0.01" min="0.00">
-        <input type="submit" value="Atualizar">
-    </form>
-
-    <?php
-    if (isset($_POST["valor"]) || isset($_POST["moedaAtual"])) {
-        if ($_POST["valor"] != $_SESSION["montante"]) {
-            $_SESSION["montante"] = $_POST["valor"];
-            $valor = (float) $_POST['valor'];
-            $id = (int) $_SESSION['id'];
-
-            $preparada = $conexao->prepare(
-                "UPDATE users SET amount = ? WHERE id = ?"
-            );
-
-            if ($preparada) {
-                $preparada->bind_param("di", $valor, $id);
-
-                if ($preparada->execute()) {
-                    // echo "Valor atualizado com sucesso!";
-                    // $_SESSION["montante"] = $_POST["valor"];
-                } else {
-                    echo "Erro ao atualizar valor.";
-                }
-
-                $preparada->close();
-            } else {
-                echo "Erro na preparação da consulta.";
-            }
+    if ($novoValor !== $montante) {
+        $stmt = $conexao->prepare("UPDATE users SET amount = ? WHERE id = ?");
+        if ($stmt) {
+            $stmt->bind_param("di", $novoValor, $id);
+            $stmt->execute();
+            $stmt->close();
+            $_SESSION['montante'] = $novoValor;
+            $montante = $novoValor;
         }
-        if ($_POST["moedaAtual"] != $_SESSION["moeda"]) {
-            $_SESSION["moeda"] = $_POST["moedaAtual"];
-            $coin = (string) $_POST['moedaAtual'];
-            $id = (int) $_SESSION['id'];
-
-            $preparada = $conexao->prepare(
-                "UPDATE users SET currencie = ? WHERE id = ?"
-            );
-
-            if ($preparada) {
-                $preparada->bind_param("si", $coin, $id);
-
-                if ($preparada->execute()) {
-                    // echo "Valor atualizado com sucesso!";
-                    // $_SESSION["moeda"] = $_POST["moedaAtual"];
-                } else {
-                    echo "Erro ao atualizar valor.";
-                }
-
-                $preparada->close();
-            } else {
-                echo "Erro na preparação da consulta.";
-            }
-        }
-        echo "<script>
-                            setTimeout(function(){
-                                window.location.href = './dashboard.php';
-                            }, 1000);
-                          </script>";
     }
 
+    if ($novaMoeda !== $moedaAtual) {
+        $stmt = $conexao->prepare("UPDATE users SET currencie = ? WHERE id = ?");
+        if ($stmt) {
+            $stmt->bind_param("si", $novaMoeda, $id);
+            $stmt->execute();
+            $stmt->close();
+            $_SESSION['moeda'] = $novaMoeda;
+            $moedaAtual = $novaMoeda;
+        }
+    }
 
-    ?>
+    $success = $t['upd_btn'];
+    header('Location: dashboard.php' . ($lang !== 'pt' ? '?lang='.$lang : ''));
+    exit;
+}
 
+$switchLang  = $lang === 'pt' ? 'en' : 'pt';
+$switchLabel = $lang === 'pt' ? 'EN' : 'PT';
+$langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
+?>
+<!DOCTYPE html>
+<html lang="<?= $lang ?>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title><?= htmlspecialchars($t['upd_title']) ?> — <?= htmlspecialchars($t['site_name']) ?></title>
+    <meta name="description" content="<?= htmlspecialchars($t['meta_desc_update']) ?>">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a href="dashboard.php<?= $langParam ?>" class="logo">🎩 <?= htmlspecialchars($t['site_name']) ?></a>
+        <div class="header-right">
+            <a href="sacar.php?lang=<?= $switchLang ?>" class="lang-btn"><?= $switchLabel ?></a>
+            <nav class="nav-links">
+                <a href="dashboard.php<?= $langParam ?>" class="nav-link">← <?= htmlspecialchars($t['nav_update'] === 'Update' ? 'Dashboard' : 'Painel') ?></a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main class="auth-main" style="max-width:480px;">
+
+    <div class="form-card">
+        <div class="form-card-header">
+            <span class="form-card-icon">✏️</span>
+            <h1 class="form-card-title"><?= htmlspecialchars($t['upd_title']) ?></h1>
+            <p class="form-card-subtitle"><?= htmlspecialchars($t['upd_subtitle']) ?></p>
+        </div>
+        <div class="form-body">
+            <div class="balance-display">
+                <span class="bl-label"><?= htmlspecialchars($t['upd_current']) ?></span>
+                <span class="bl-value">
+                    <?= number_format($montante, 2, ',', '.') ?>
+                    <small style="font-size:0.9rem;color:#666;"><?= htmlspecialchars($moedaAtual) ?></small>
+                </span>
+            </div>
+
+            <form method="POST" action="sacar.php<?= $langParam ?>">
+                <div class="form-group">
+                    <label class="form-label" for="moedaAtual"><?= htmlspecialchars($t['upd_currency']) ?></label>
+                    <select class="form-select" id="moedaAtual" name="moedaAtual">
+                        <?php foreach ($moedas as $moeda):
+                            $nome     = $lang === 'en' ? $moeda['nome_en'] : $moeda['nome_pt'];
+                            $selected = $moeda['sigla'] === $moedaAtual ? 'selected' : '';
+                        ?>
+                        <option value="<?= htmlspecialchars($moeda['sigla']) ?>" <?= $selected ?>>
+                            <?= htmlspecialchars($moeda['sigla']) ?> — <?= htmlspecialchars($nome) ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="valor"><?= htmlspecialchars($t['upd_amount']) ?></label>
+                    <input class="form-input" type="number" id="valor" name="valor"
+                           step="0.01" min="0" required
+                           value="<?= htmlspecialchars($montante) ?>">
+                </div>
+                <button type="submit" class="btn-primary"><?= htmlspecialchars($t['upd_btn']) ?></button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p><?= htmlspecialchars($t['footer_copy']) ?></p>
+</footer>
 </body>
-<script>
-    // Captura o formulário pelo ID
-const formulario = document.getElementById('sacar');
-
-formulario.addEventListener('submit', function(event) {
-    // Evita que a página seja recarregada
-    event.preventDefault();
-
-    // Cria um objeto com os dados do formulário
-    const formData = new FormData(formulario);
-
-    // Envia os dados para o arquivo PHP
-    fetch('sacar.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text()) // ou response.json() se o PHP retornar JSON
-    .then(data => {
-        // Exibe a resposta do PHP na div "resposta"
-        document.getElementById('resposta').innerHTML = data;
-        
-        // Opcional: limpa o formulário após o envio
-        formulario.reset();
-        
-    })
-    .catch(error => console.error('Erro:', error));
-    setTimeout(function(){window.location.href = './dashboard.php';}, 1000);
-});
-
-</script>
-
 </html>
