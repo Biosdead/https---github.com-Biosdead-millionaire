@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['pass
                 $_SESSION['moeda']    = $usuario['currencie'];
                 $_SESSION['montante'] = $usuario['amount'];
                 $success = $t['login_success'];
-                echo "<script>setTimeout(()=>location.href='./dashboard.php',800)</script>";
+                echo "<script>setTimeout(()=>location.href='./dashboard.php',500)</script>";
             } else {
                 $error = $t['login_error'];
             }
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'], $_POST['pass
 }
 
 $switchLang  = $lang === 'pt' ? 'en' : 'pt';
-$switchLabel = $lang === 'pt' ? 'EN' : 'PT';
+$switchLabel = $lang === 'pt' ? '🇺🇸 EN' : '🇧🇷 PT';
 $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
 ?>
 <!DOCTYPE html>

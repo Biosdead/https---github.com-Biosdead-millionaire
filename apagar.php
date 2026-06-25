@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 }
 
 $switchLang  = $lang === 'pt' ? 'en' : 'pt';
-$switchLabel = $lang === 'pt' ? 'EN' : 'PT';
+$switchLabel = $lang === 'pt' ? '🇺🇸 EN' : '🇧🇷 PT';
 $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
 ?>
 <!DOCTYPE html>

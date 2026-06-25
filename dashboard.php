@@ -79,7 +79,7 @@ elseif ($countMilionarias <= 100)  { $rankIcon = '💎'; $rankKey = 'dash_rank_3
 else                               { $rankIcon = '👑'; $rankKey = 'dash_rank_4'; }
 
 $switchLang  = $lang === 'pt' ? 'en' : 'pt';
-$switchLabel = $lang === 'pt' ? 'EN' : 'PT';
+$switchLabel = $lang === 'pt' ? '🇺🇸 EN' : '🇧🇷 PT';
 $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
 
 // Structured data for SEO

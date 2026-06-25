@@ -55,7 +55,7 @@ if ($dataDaBaseDeDados == $dataHoje) {
 
 
     // Exibe os resultados
-    echo "Base: 1 {$moeda_base} — Atualizado em: {$dataHoje}\n\n";
+    // echo "Base: 1 {$moeda_base} — Atualizado em: {$dataHoje}\n\n";
 
     $id = 1;
     $nameEnglish = '';
@@ -71,7 +71,7 @@ if ($dataDaBaseDeDados == $dataHoje) {
 
 
     foreach ($taxas as $codigo => $valor) {
-        echo "$id -  1 USD = {$valor} {$codigo}\n";
+        // echo "$id -  1 USD = {$valor} {$codigo}\n";
         // $nameEnglish = $moedas[$id]['nome_en'];
         // $namePortuguese = $moedas[$id]['nome_pt'];
         // $acronym = $codigo;
