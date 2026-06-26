@@ -1,5 +1,6 @@
 <?php
 const Milion = 1000000;
+const Bilion = 1000000000;
 
 function converterMoeda($MoedaCorrente, $MoedaExterna) {
     return (1 / $MoedaCorrente) * $MoedaExterna;

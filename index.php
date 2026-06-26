@@ -54,12 +54,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
             if ($convertido >= Milion) {
                 $cmeta = getCurrencyMeta($row['acronym'], $lang);
                 $milionarias[] = [
-                    'nome'    => $lang === 'en' ? $row['nameEnglish'] : $row['namePortuguese'],
-                    'sigla'   => $row['acronym'],
-                    'valor'   => $convertido,
-                    'flag'    => $cmeta['flag'],
-                    'country' => $cmeta['country'],
-                    'amount'  => formatAmount($convertido),
+                    'nome'       => $lang === 'en' ? $row['nameEnglish'] : $row['namePortuguese'],
+                    'sigla'      => $row['acronym'],
+                    'valor'      => $convertido,
+                    'flag'       => $cmeta['flag'],
+                    'country'    => $cmeta['country'],
+                    'amount'     => formatAmount($convertido),
+                    'is_billion' => $convertido >= Bilion,
                 ];
                 $countMil++;
             } else {
@@ -353,7 +354,9 @@ $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
                     <span class="currency-country"><?= htmlspecialchars($m['country']) ?></span>
                     <span class="currency-acronym"><?= htmlspecialchars($m['sigla']) ?></span>
                     <span class="currency-amount"><?= htmlspecialchars($m['amount']) ?></span>
-                    <span class="currency-badge"><?= htmlspecialchars($t['conv_badge']) ?></span>
+                    <span class="currency-badge<?= $m['is_billion'] ? ' billion' : '' ?>">
+                        <?= htmlspecialchars($m['is_billion'] ? $t['badge_billion'] : $t['conv_badge']) ?>
+                    </span>
                 </div>
             </article>
             <?php endforeach; ?>

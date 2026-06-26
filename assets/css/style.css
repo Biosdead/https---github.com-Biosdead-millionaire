@@ -406,6 +406,11 @@ body {
   margin-top: 5px;
 }
 
+.currency-badge.billion {
+  background: #D4AF37;
+  color: #1a1a1a;
+}
+
 /* ===== NO MILLIONAIRE STATE ===== */
 .no-million {
   text-align: center;

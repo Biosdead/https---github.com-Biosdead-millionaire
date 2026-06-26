@@ -47,12 +47,13 @@ while ($resultado = $Moedas->fetch_assoc()) {
     if ($MoedaConvertida >= Milion) {
         $cmeta = getCurrencyMeta($resultado['acronym'], $lang);
         $milionarias[] = [
-            'nome'    => $lang === 'en' ? $resultado['nameEnglish'] : $resultado['namePortuguese'],
-            'sigla'   => $resultado['acronym'],
-            'valor'   => $MoedaConvertida,
-            'flag'    => $cmeta['flag'],
-            'country' => $cmeta['country'],
-            'amount'  => formatAmount($MoedaConvertida),
+            'nome'       => $lang === 'en' ? $resultado['nameEnglish'] : $resultado['namePortuguese'],
+            'sigla'      => $resultado['acronym'],
+            'valor'      => $MoedaConvertida,
+            'flag'       => $cmeta['flag'],
+            'country'    => $cmeta['country'],
+            'amount'     => formatAmount($MoedaConvertida),
+            'is_billion' => $MoedaConvertida >= Bilion,
         ];
     } else {
         if ($proxima === null) {
@@ -193,7 +194,9 @@ $schemaDesc = $t['meta_desc_dash'];
                 <span class="currency-country"><?= htmlspecialchars($m['country']) ?></span>
                 <span class="currency-acronym"><?= htmlspecialchars($m['sigla']) ?></span>
                 <span class="currency-amount"><?= htmlspecialchars($m['amount']) ?></span>
-                <span class="currency-badge"><?= htmlspecialchars($t['dash_yes']) ?></span>
+                <span class="currency-badge<?= $m['is_billion'] ? ' billion' : '' ?>">
+                    <?= htmlspecialchars($m['is_billion'] ? $t['badge_billion'] : $t['dash_yes']) ?>
+                </span>
             </div>
         </article>
         <?php endforeach; ?>
