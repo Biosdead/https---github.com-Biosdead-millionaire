@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark green rounded background -->
+  <rect width="32" height="32" rx="6" fill="#1B5E20"/>
+  <!-- Top hat body -->
+  <rect x="10" y="5" width="12" height="13" rx="2" fill="#FFD700"/>
+  <!-- Hat band (darker gold) -->
+  <rect x="10" y="15" width="12" height="3" fill="#B8960C"/>
+  <!-- Hat brim -->
+  <rect x="3" y="18" width="26" height="6" rx="3" fill="#FFD700"/>
+</svg>

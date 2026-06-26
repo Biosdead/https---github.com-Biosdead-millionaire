@@ -3,7 +3,7 @@ session_start();
 if (isset($_GET['lang']) && in_array($_GET['lang'], ['pt','en'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
-$lang = $_SESSION['lang'] ?? 'pt';
+$lang = $_SESSION['lang'] ?? 'en';
 include_once "./conexao.php";
 include_once "moedas.php";
 include "lang.php";
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'], $_POST['email
 
 $switchLang  = $lang === 'pt' ? 'en' : 'pt';
 $switchLabel = $lang === 'pt' ? '🇺🇸 EN' : '🇧🇷 PT';
-$langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
+$langParam   = $lang !== 'en' ? '?lang='.$lang : '';
 ?>
 <!DOCTYPE html>
 <html lang="<?= $lang ?>">
@@ -61,6 +61,9 @@ $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
     <meta property="og:type"        content="website">
     <link rel="alternate" hreflang="pt" href="cadastrar.php?lang=pt">
     <link rel="alternate" hreflang="en" href="cadastrar.php?lang=en">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">

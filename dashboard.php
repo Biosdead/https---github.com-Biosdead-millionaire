@@ -3,7 +3,7 @@ session_start();
 if (isset($_GET['lang']) && in_array($_GET['lang'], ['pt','en'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
-$lang = $_SESSION['lang'] ?? 'pt';
+$lang = $_SESSION['lang'] ?? 'en';
 include_once "./autenticador.php";
 include "./conexao.php";
 include "funcoes.php";
@@ -86,7 +86,7 @@ else                               { $rankIcon = '👑'; $rankKey = 'dash_rank_4
 
 $switchLang  = $lang === 'pt' ? 'en' : 'pt';
 $switchLabel = $lang === 'pt' ? '🇺🇸 EN' : '🇧🇷 PT';
-$langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
+$langParam   = $lang !== 'en' ? '?lang='.$lang : '';
 
 // Structured data for SEO
 $schemaName = $t['site_name'];
@@ -105,6 +105,9 @@ $schemaDesc = $t['meta_desc_dash'];
     <meta property="og:type"        content="website">
     <link rel="alternate" hreflang="pt" href="dashboard.php?lang=pt">
     <link rel="alternate" hreflang="en" href="dashboard.php?lang=en">
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -118,7 +121,7 @@ $schemaDesc = $t['meta_desc_dash'];
             <a href="dashboard.php?lang=<?= $switchLang ?>" class="lang-btn"><?= $switchLabel ?></a>
             <nav class="nav-links" aria-label="Main navigation">
                 <a href="sacar.php<?= $langParam ?>" class="nav-link">✏️ <?= htmlspecialchars($t['nav_update']) ?></a>
-                <a href="dashboard.php?acao=sair<?= $lang !== 'pt' ? '&lang='.$lang : '' ?>" class="nav-link">⬛ <?= htmlspecialchars($t['nav_logout']) ?></a>
+                <a href="dashboard.php?acao=sair<?= $lang !== 'en' ? '&lang='.$lang : '' ?>" class="nav-link">⬛ <?= htmlspecialchars($t['nav_logout']) ?></a>
                 <a href="apagar.php<?= $langParam ?>" class="nav-link danger">🗑 <?= htmlspecialchars($t['nav_delete']) ?></a>
             </nav>
         </div>
