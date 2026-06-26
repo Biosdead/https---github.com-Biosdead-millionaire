@@ -1,7 +1,11 @@
 <?php 
-$host = 'localhost';
-$user = 'root';
-$password = '';
+// $host = 'localhost';
+// $user = 'root';
+// $password = '';
+// $dbname = 'millionaire';
+$host = 'millionaire.mysql.dbaas.com.br';
+$user = 'millionaire';
+$password = 'RT#4060Ti';
 $dbname = 'millionaire';
 
 
