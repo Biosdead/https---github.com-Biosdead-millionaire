@@ -67,7 +67,7 @@ if ($dataDaBaseDeDados == $dataHoje) {
 
     // $stmtMoeda = $conexao->prepare("UPDATE currencies SET (nameEnglish, namePortuguese, acronym, dollarValue, date, time) VALUES (?, ?, ?, ?, ?, ?)");
     $stmtMoeda = $conexao->prepare("UPDATE currencies SET dollarValue = ?, date = ?, time = ? WHERE id = ?");
-    $stmtMoeda->bind_param("dssi", $dollarValue, $dataHoje, $horaApi, $id);
+    $stmtMoeda->bind_param("dssi", $dollarValue, $dataHoje, $horaAgora, $id);
 
 
     foreach ($taxas as $codigo => $valor) {

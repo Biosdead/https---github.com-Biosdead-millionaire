@@ -7,6 +7,7 @@ $lang = $_SESSION['lang'] ?? 'pt';
 include_once "./autenticador.php";
 include "./conexao.php";
 include "funcoes.php";
+include "currencies_meta.php";
 include "lang.php";
 
 // Handle logout
@@ -44,10 +45,14 @@ while ($resultado = $Moedas->fetch_assoc()) {
     $MoedaConvertida = converterMoeda($va, (float)$resultado['dollarValue']) * $QtdMoeda;
 
     if ($MoedaConvertida >= Milion) {
+        $cmeta = getCurrencyMeta($resultado['acronym'], $lang);
         $milionarias[] = [
-            'nome'  => $lang === 'en' ? $resultado['nameEnglish'] : $resultado['namePortuguese'],
-            'sigla' => $resultado['acronym'],
-            'valor' => $MoedaConvertida,
+            'nome'    => $lang === 'en' ? $resultado['nameEnglish'] : $resultado['namePortuguese'],
+            'sigla'   => $resultado['acronym'],
+            'valor'   => $MoedaConvertida,
+            'flag'    => $cmeta['flag'],
+            'country' => $cmeta['country'],
+            'amount'  => formatAmount($MoedaConvertida),
         ];
     } else {
         if ($proxima === null) {
@@ -184,8 +189,10 @@ $schemaDesc = $t['meta_desc_dash'];
                  title="<?= htmlspecialchars($m['nome']) ?> — <?= number_format($m['valor'], 0, ',', '.') ?>">
             <div class="currency-card-stripe <?= $stripeClass ?>"></div>
             <div class="currency-card-body">
+                <span class="currency-flag"><?= $m['flag'] ?></span>
+                <span class="currency-country"><?= htmlspecialchars($m['country']) ?></span>
                 <span class="currency-acronym"><?= htmlspecialchars($m['sigla']) ?></span>
-                <span class="currency-fullname"><?= htmlspecialchars($m['nome']) ?></span>
+                <span class="currency-amount"><?= htmlspecialchars($m['amount']) ?></span>
                 <span class="currency-badge"><?= htmlspecialchars($t['dash_yes']) ?></span>
             </div>
         </article>

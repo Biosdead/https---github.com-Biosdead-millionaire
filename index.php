@@ -10,6 +10,7 @@ ob_start();
 include "./conexao.php";
 include "funcoes.php";
 ob_end_clean();
+include "currencies_meta.php";
 
 include_once "moedas.php";
 include "lang.php";
@@ -51,10 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
             $convertido = converterMoeda($va, (float)$row['dollarValue']) * $valorForm;
 
             if ($convertido >= Milion) {
+                $cmeta = getCurrencyMeta($row['acronym'], $lang);
                 $milionarias[] = [
-                    'nome'  => $lang === 'en' ? $row['nameEnglish'] : $row['namePortuguese'],
-                    'sigla' => $row['acronym'],
-                    'valor' => $convertido,
+                    'nome'    => $lang === 'en' ? $row['nameEnglish'] : $row['namePortuguese'],
+                    'sigla'   => $row['acronym'],
+                    'valor'   => $convertido,
+                    'flag'    => $cmeta['flag'],
+                    'country' => $cmeta['country'],
+                    'amount'  => formatAmount($convertido),
                 ];
                 $countMil++;
             } else {
@@ -344,8 +349,10 @@ $langParam   = $lang !== 'pt' ? '?lang='.$lang : '';
                      title="<?= htmlspecialchars($m['nome']) ?> — <?= number_format($m['valor'], 0, ',', '.') ?>">
                 <div class="currency-card-stripe stripe-<?= $i % 8 ?>"></div>
                 <div class="currency-card-body">
+                    <span class="currency-flag"><?= $m['flag'] ?></span>
+                    <span class="currency-country"><?= htmlspecialchars($m['country']) ?></span>
                     <span class="currency-acronym"><?= htmlspecialchars($m['sigla']) ?></span>
-                    <span class="currency-fullname"><?= htmlspecialchars($m['nome']) ?></span>
+                    <span class="currency-amount"><?= htmlspecialchars($m['amount']) ?></span>
                     <span class="currency-badge"><?= htmlspecialchars($t['conv_badge']) ?></span>
                 </div>
             </article>
