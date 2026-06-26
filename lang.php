@@ -102,7 +102,7 @@ $translations = [
         'conv_how_title'      => 'How does it work?',
         'conv_badge'          => 'MILLIONAIRE',
         'conv_try_demo'       => 'Try with your own savings',
-        'footer_copy'         => '© 2026 Am I A Millionaire? All rights reserved.',
+        'footer_copy'         => '© 2026 Am I A Millionaire? All rights reserved. Created by Lennon Sales Furtado. Contact me - lennonsfurtado@gmail.com',
     ],
     'pt' => [
         'site_name'           => 'Sou Milionário?',
@@ -206,7 +206,7 @@ $translations = [
         'conv_how_title'      => 'Como funciona?',
         'conv_badge'          => 'MILIONÁRIO',
         'conv_try_demo'       => 'Experimente com sua reserva',
-        'footer_copy'         => '© 2026 Sou Milionário? Todos os direitos reservados.',
+        'footer_copy'         => '© 2026 Sou Milionário? Todos os direitos reservados. Criado por Lennon Sales Furtado. Fale comigo - lennonsfurtado@gmail.com',
     ],
 ];
 
