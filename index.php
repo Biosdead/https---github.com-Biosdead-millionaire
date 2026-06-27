@@ -236,18 +236,18 @@ $langParam   = $lang !== 'en' ? '?lang='.$lang : '';
 
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Am I A Millionaire?",
-      "alternateName": "Sou Milionário?",
-      "url": "https://amiamillionaire.io",
-      "description": "<?= addslashes($t['meta_desc_home']) ?>",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "inLanguage": ["pt","en"]
-    }
+    <?= json_encode([
+        '@context'            => 'https://schema.org',
+        '@type'               => 'WebApplication',
+        'name'                => 'Am I A Millionaire?',
+        'alternateName'       => 'Sou Milionário?',
+        'url'                 => 'https://amiamillionaire.io',
+        'description'         => $t['meta_desc_home'],
+        'applicationCategory' => 'FinanceApplication',
+        'operatingSystem'     => 'Any',
+        'offers'              => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'USD'],
+        'inLanguage'          => ['pt', 'en'],
+    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>
     </script>
 </head>
 <body>
